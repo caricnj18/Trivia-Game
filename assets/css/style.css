@@ -1,0 +1,40 @@
+/*style sheet for wk 05*/
+
+
+
+* { 
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("assets/images/theShire.jpg");
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    
+}
+
+section{
+    width: 75%;
+    text-align: center;
+    float: left;
+    max-width: 650px;
+    padding: 30px;
+    padding-top: 20px;
+    margin-left: 45px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    position: absolute;
+    left: 260px;
+}
+
+h1{
+text-align: center; 
+}
+
+#startButton{
+text-align:center;
+border: 1px solid lightgrey;
+}
+
+.panel-primary{
+    text-align:center;
+}
