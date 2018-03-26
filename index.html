@@ -2,155 +2,103 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Triva Game</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <title>Triva Game</title>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("waltdisneylogo.jpg");
+      font-family: "Comic Sans MS", cursive, sans-serif;
+
+    }
+
+    section {
+      width: 75%;
+      text-align: center;
+      float: left;
+      max-width: 650px;
+      padding: 30px;
+      padding-top: 20px;
+      margin-left:45px;
+      margin-right:15px;: 
+      background-color: white;
+      border: 1px solid lightgrey;
+      position: absolute;
+      left: 260px;
+     
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #startButton {
+      text-align: center;
+      border: 1px solid lightgrey;
+    }
+.radio-inline{
+  
+}
+    .panel-primary {
+      text-align: center;
+    }
+
+    #questions {
+      margin: 15px;
+    }
+  </style>
 </head>
 
 
 
 <body>
-    <header>
-        <!--title for page-->
-        <div class="jumbotron">
-            <h1>Totally Trivia Triva!</h1>
-          </div>
-    </header>
+  <header>
+    <!--title for page-->
+    <div class="jumbotron" style="background-color:rgb(38, 114, 228); color: white">
+      <h1>Disney Trivia!</h1>
+    </div>
+  </header>
 
-    <section>
+  <section>
 
     <!--start button & countdown-->
-   <div class="panel panel-default"> 
-  <div id ="startButton">
-      <div class="panel-body">Time Remaining: </div>
-        <a class="btn btn-primary btn-lg" href="#" role="button"><strong>Start</strong></a>
-   </div>
-</div>
+    <div class="panel panel-default">
+      <div id="startButton">
+        <div id="timer" class="panel-body">
+          <a class="btn btn-primary btn-lg" href="#" role="button">
+            <strong>Start</strong>
+          </a>
+          <div id="finished" class="panel-body">
+            <a class="btn btn-primary btn-lg" href="#" role="button">
+              <strong>Submit</strong>
+            </a>
+          </div>
 
-<!--https://www.buzzfeed.com/cassiesmyth/can-you-pass-this-disney-true-or-false-quiz?utm_term=.lk2pBlN0G#.lyp2BoydN-->
-
-
-<!--true&falseQ&A01-->
-<div class="panel panel-primary">
-              <div class="questionOne">
-                <span class="inputOneA">
-                    <p>Question #01: Mushu was originally supposed to be a human trapped in a dragons form, with him and Mulan falling in love at the end of the film.</p>
-                  <input type="radio">TRUE</span>
-                <class="form-control">
-                <span class="inputOneB">
-                    <input type="radio">FALSE</span> <!--CORRECT-->
-                  <class="form-control">
-              </div>
-           </div>
-         
-
-
-
-
-<!--true&falseQ&A02-->
-<div class="panel panel-primary">
-        <div class="questionTwo">
-          <span class="inputTwoA">
-              <p>Question #02: Tiana is left handed.</p>
-            <input type="radio">TRUE</span> <!--CORRECT-->
-          <class="form-control">
-          <span class="inputTwoB">
-              <input type="radio">FALSE</span>
-            <class="form-control">
         </div>
-     </div>
-    
+      </div>
+    </div>
 
-    <!--true&falseQ&A03-->
-<div class="panel panel-primary">
-        <div class="questionThree">
-          <span class="inputThreeA">
-              <p>Question #03: Boo's real name is Mary.</p>
-            <input type="radio">TRUE</span> <!--CORRECT-->
-          <class="form-control">
-          <span class="inputThreeB">
-              <input type="radio">FALSE</span>
-            <class="form-control">
-        </div>
-     </div>
+    <div id="questions">
+
+    </div>
 
 
-     <!--true&falseQ&A04-->
-<div class="panel panel-primary">
-        <div class="questionFour">
-          <span class="inputFourA">
-              <p>Question #04: Hyena researchers thought that they were unfairly portrayed in the film.</p>
-            <input type="radio">TRUE</span> <!--CORRECT-->
-          <class="form-control">
-          <span class="inputThreeB">
-              <input type="radio">FALSE</span>
-            <class="form-control">
-        </div>
-     </div>
 
 
-     <!--true&falseQ&A05-->
-<div class="panel panel-primary">
-        <div class="questionFive">
-          <span class="inputFiveA">
-              <p>Question #05: In the first sketches of Ariel she was a brunette.</p>
-            <input type="radio">TRUE</span>
-          <class="form-control">
-          <span class="inputFiveB">
-              <input type="radio">FALSE</span> <!--CORRECT-->
-            <class="form-control">
-        </div>
-     </div>
 
 
-     <!--true&falseQ&A06-->
-<div class="panel panel-primary">
-        <div class="questionSix">
-          <span class="inputSixA">
-              <p>Question #06: The dwarfs in the "Snow White" only have three fingers and one thumb.</p>
-            <input type="radio">TRUE</span> <!--CORRECT-->
-          <class="form-control">
-          <span class="inputSixB">
-              <input type="radio">FALSE</span>
-            <class="form-control">
-        </div>
-     </div>
+  </section>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-     <!--true&falseQ&A07-->
-<div class="panel panel-primary">
-        <div class="questionSeven">
-          <span class="inputSevenA">
-              <p>Question #07: Andy is 21 in Toy Story 3.</p>
-            <input type="radio">TRUE</span>
-          <class="form-control">
-          <span class="inputSevenB">
-              <input type="radio">FALSE</span> <!--CORRECT-->
-            <class="form-control">
-        </div>
-     </div>
-
-
-     <!--true&falseQ&A08-->
-<div class="panel panel-primary">
-        <div class="questionEight">
-          <span class="inputEightA">
-              <p>Question #08: Kristen Bell played Priscilla the sloth in Zootopia.</p>
-            <input type="radio">TRUE</span> <!--CORRECT-->
-          <class="form-control">
-          <span class="inputEightB">
-              <input type="radio">FALSE</span>
-            <class="form-control">
-        </div>
-     </div>
-
-
-    </section>
-    <!-- Script -->
-    <script src="assets/javascript/app.js"></script>
+  <!-- Script -->
+  <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>

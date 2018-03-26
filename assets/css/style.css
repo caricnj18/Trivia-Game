@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: url("assets/images/theShire.jpg");
+    
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     
 }
@@ -37,4 +37,8 @@ border: 1px solid lightgrey;
 
 .panel-primary{
     text-align:center;
+}
+
+#questions{
+margin: 15px;
 }
