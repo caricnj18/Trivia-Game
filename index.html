@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Triva Game</title>
+  <title>Trivia Game</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <style>
@@ -66,18 +66,16 @@
 
     <!--start button & countdown-->
     <div class="panel panel-default">
-      <div id="startButton">
-        <div id="timer" class="panel-body">
-          <a class="btn btn-primary btn-lg" href="#" role="button">
-            <strong>Start</strong>
-          </a>
-          <div id="finished" class="panel-body">
-            <a class="btn btn-primary btn-lg" href="#" role="button">
-              <strong>Submit</strong>
-            </a>
-          </div>
+        <div id="timer" class="panel-body"></div>
 
-        </div>
+       
+          <button class="btn btn-primary btn-lg" id ="startButton">
+            <strong>Start</strong>
+          </button>
+        
+          <button class="btn btn-primary btn-lg" id ="finished" style="display:none;">
+            <strong>Submit</strong>
+          </button>
       </div>
     </div>
 

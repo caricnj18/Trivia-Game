@@ -1,7 +1,8 @@
+//my trivia game
 //global variables
 var counter = 30;
 var correct = 0;
-var incorrect =0;
+
 var timeInterval;
 
 var questions = [{
@@ -47,7 +48,7 @@ var questions = [{
 ];
 
 
-function createQuestions(questions) { //loop through questions
+function createQuestions(questions) { //loop through questions i is questions
   $("#questions").empty();
 
   for (var i = 0; i < questions.length; i++) {
@@ -58,7 +59,7 @@ function createQuestions(questions) { //loop through questions
 
     $panel.append($question); //question into panel
 
-    for (var j = 0; j < questions[i].answers.length; j++) { //loop through answers
+    for (var j = 0; j < questions[i].answers.length; j++) { //loop through answers j is answers
       var $label = $("<label>").addClass("radio-inline").text(questions[i].answers[j]);
       var $input = $("<input>", {
         type: "radio",
@@ -76,76 +77,64 @@ function createQuestions(questions) { //loop through questions
 
 function endQuiz() {
   clearInterval(timeInterval);
-  console.log("endquiz")
+  console.log("endquiz");
+  $("#timer").text("");//removes timer text when showresults
   
   
-  $.each($('input[name="question-0"]:checked'), function(){
+  $.each($('input[name="question_0"]:checked'), function(){
     if($(this).val() == questions[0].answer){
-      game.correct++;
-    } else {
-      game.incorrect++;
-    }
+      correct++;
+    } 
   });
-  $.each($('input[name="question-1"]:checked'), function(){
+  $.each($('input[name="question_1"]:checked'), function(){
     if($(this).val() == questions[1].answer){
-      game.correct++;
-    } else {
-      game.incorrect++;
+      correct++;
     }
   });
-  $.each($('input[name="question-2"]:checked'), function(){
+  $.each($('input[name="question_2"]:checked'), function(){
     if($(this).val() == questions[2].answer){
-      game.correct++;
-    } else {
-      game.incorrect++;
-    }
+      correct++;
+    } 
   });
-  $.each($('input[name="question-3"]:checked'), function(){
+  $.each($('input[name="question_3"]:checked'), function(){
     if($(this).val() == questions[3].answer){
-      game.correct++;
-    } else {
-      game.incorrect++;
-    }
+     correct++;
+    } 
   });
-  $.each($('input[name="question-4"]:checked'), function(){
+  $.each($('input[name="question_4"]:checked'), function(){
     if($(this).val() == questions[4].answer){
-      game.correct++;
-    } else {
-      game.incorrect++;
-    }
+     correct++;
+    } 
   });
-  $.each($('input[name="question-5"]:checked'), function(){
+  $.each($('input[name="question_5"]:checked'), function(){
     if($(this).val() == questions[5].answer){
-      game.correct++;
-    } else {
-      game.incorrect++;
-    }
+      correct++;
+    } 
   });
-  $.each($('input[name="question-6"]:checked'), function(){
+  $.each($('input[name="question_6"]:checked'), function(){
     if($(this).val() == questions[6].answer){
-      game.correct++;
-    } else {
-      game.incorrect++;
+      correct++;
     }
   });
-  $.each($('input[name="question-7"]:checked'), function(){
+  $.each($('input[name="question_7"]:checked'), function(){
     if($(this).val() == questions[7].answer){
-      game.correct++;
-    } else {
-      game.incorrect++;
-    }
+     correct++;
+    } 
   });
-  $.each($('input[name="question-8"]:checked'), function(){
+  $.each($('input[name="question_8"]:checked'), function(){
     if($(this).val() == questions[8].answer){
-      game.correct++;
-    } else {
-      game.incorrect++;
-    }
+      correct++;
+    } 
   });
 
+  var incorrect = questions.length - correct;//to figure out incorrect
   
   $("#questions").empty();
-  $("#questions").text("showResults");
+  $("#questions").text("Correct: " + correct + "\n" + "Incorrrect: " + incorrect );
+  $("#startButton").show();
+  $(this).hide();//hides submit button
+ 
+  correct = 0;
 }
 
 //  Start on click.
@@ -162,15 +151,13 @@ $("#startButton").on("click", function () {
 
   counter =30;
   createQuestions(questions);
+  $(this).hide();//hides start button
   $("#timer").text("Time Remaining: " + counter);
+  $("#finished").show();//shows submit button when start button clicked
 });
 
 //  Done on click.
-$("#finished").on("click", function (endQuiz) {
-  
-
-  endQuiz()
-});
+$("#finished").on("click", endQuiz );// calls endQuiz method
 
 
 
